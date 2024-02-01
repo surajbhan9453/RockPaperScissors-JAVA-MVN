@@ -21,14 +21,8 @@ jobs:
 
     - name: Display Maven Goals Output
       run: |
-        mvn --version
-        mvn compile
-        mvn test
-        mvn package
-        mvn verify
-        mvn install
-        mvn site
-        mvn deploy
+        mvn --version       
+        mvn test        
         mvn clean
 
        
