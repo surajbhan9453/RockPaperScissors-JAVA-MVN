@@ -1,6 +1,10 @@
 name: Rock-Paper-Scissors Maven project
 
-on: [push, pull_request]
+
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -16,8 +20,9 @@ jobs:
         distribution: 'adopt'
         java-version: '11'
 
-    - name: Build RPS Maven Project
-      run: mvn clean install -B
+    - name: Build Maven Project
+      run: |
+        mvn clean install
 
     - name: Display Maven Goals Output
       run: |
@@ -30,4 +35,6 @@ jobs:
         mvn site
         mvn deploy
         mvn clean
+
+
 
