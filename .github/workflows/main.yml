@@ -24,6 +24,11 @@ jobs:
         mvn --version       
         mvn test        
         mvn clean
+        mvn package
+        mvn verify
+        mvn install
+        mvn site
+        mvn deploy
 
        
        
