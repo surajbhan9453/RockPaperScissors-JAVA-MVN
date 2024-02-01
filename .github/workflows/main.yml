@@ -28,6 +28,6 @@ jobs:
         mvn validate
         mvn compile
         mvn test
-        mvn package
+      
      
 
