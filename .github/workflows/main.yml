@@ -1,10 +1,6 @@
-name: Rock-Paper-Scissors Maven project
+name: Maven Build and Goals
 
-
-on:
-  push:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
   build:
@@ -21,20 +17,18 @@ jobs:
         java-version: '11'
 
     - name: Build Maven Project
-      run: |
-        mvn clean install
+      run: mvn clean install -B
 
     - name: Display Maven Goals Output
       run: |
-        mvn validate
-        mvn compile
-        mvn test
-        mvn package
-        mvn verify
-        mvn install
-        mvn site
-        mvn deploy
-        mvn clean
-
-
+        mvn --version
+        mvn help:describe -Dcmd=install
+        mvn help:describe -Dcmd=clean
+        mvn help:describe -Dcmd=test
+        mvn help:describe -Dcmd=compile
+        mvn help:describe -Dcmd=package
+        mvn help:describe -Dcmd=verify
+        mvn help:describe -Dcmd=site
+        mvn help:describe -Dcmd=deploy
+        mvn help:describe -Dcmd=dependency:analyze
 
